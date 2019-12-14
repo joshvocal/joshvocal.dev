@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:joshvocal_dev/config/themes.dart';
+import 'package:joshvocal_dev/resources/themes.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ThemeNotifier with ChangeNotifier {

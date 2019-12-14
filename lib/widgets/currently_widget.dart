@@ -5,53 +5,61 @@ class CurrentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(bottom: 32),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.only(
-              left: 0,
-              right: 0,
-              top: 0,
-              bottom: 0,
-            ),
+            padding: EdgeInsets.only(bottom: 8),
             child: Text(
-              'Currently',
+              'Current Interests',
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          Divider(
-            color: Colors.grey,
-          ),
-          ListTile(
-            leading: Container(
-              width: 24,
-              alignment: Alignment.center,
-              child: Icon(FontAwesomeIcons.search, size: 24),
+          Card(
+            child: ListTile(
+              leading: Container(
+                width: 40,
+                alignment: Alignment.center,
+                child: Text(
+                  '🎯',
+                  style: TextStyle(fontSize: 24),
+                ),
+              ),
+              title: Text('Learning'),
+              subtitle: Text('Flutter'),
             ),
-            title: Text('Learning'),
-            subtitle: Text('Flutter'),
           ),
-          ListTile(
-            leading: Container(
-              width: 24,
-              alignment: Alignment.center,
-              child: Icon(FontAwesomeIcons.music, size: 24),
+          Card(
+            child: ListTile(
+              leading: Container(
+                width: 40,
+                alignment: Alignment.center,
+                child: Text(
+                  '🎸',
+                  style: TextStyle(fontSize: 24),
+                ),
+              ),
+              title: Text('Listening'),
+              subtitle: Text('Yvette Young'),
             ),
-            title: Text('Listening'),
-            subtitle: Text('Yvette Young'),
           ),
-          ListTile(
-            leading: Container(
-              width: 24,
-              alignment: Alignment.center,
-              child: Icon(FontAwesomeIcons.video, size: 24),
+          Card(
+            child: ListTile(
+              leading: Container(
+                width: 40,
+                alignment: Alignment.center,
+                child: Text(
+                  '👾',
+                  style: TextStyle(fontSize: 24),
+                ),
+              ),
+              title: Text('Playing'),
+              subtitle: Text('Nothing'),
             ),
-            title: Text('Watching'),
-            subtitle: Text('Nothing'),
           ),
         ],
       ),

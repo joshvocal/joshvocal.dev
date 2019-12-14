@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:joshvocal_dev/widgets/app_bar_widget.dart';
 import 'package:joshvocal_dev/widgets/currently_widget.dart';
+import 'package:joshvocal_dev/widgets/employment_widget.dart';
 import 'package:joshvocal_dev/widgets/footer_widget.dart';
 import 'package:joshvocal_dev/widgets/intro_widget.dart';
 
@@ -30,6 +31,7 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 IntroWidget(),
+                EmploymentWidget(),
                 CurrentWidget(),
                 FooterWidget(),
               ],

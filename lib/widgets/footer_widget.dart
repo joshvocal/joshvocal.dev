@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:joshvocal_dev/config/strings.dart';
+import 'package:joshvocal_dev/resources/strings.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class FooterWidget extends StatelessWidget {
@@ -16,7 +16,7 @@ class FooterWidget extends StatelessWidget {
               bottom: 8,
             ),
             child: Text(
-              'Let\'s Connect ☕️',
+              kLetsConnect,
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
@@ -41,9 +41,7 @@ class FooterWidget extends StatelessWidget {
                 ),
                 IconButton(
                   icon: Icon(FontAwesomeIcons.fileAlt),
-                ),
-                IconButton(
-                  icon: Icon(FontAwesomeIcons.mediumM),
+                  onPressed: () => launch('assets/josh.pdf'),
                 ),
               ],
             ),
@@ -51,7 +49,7 @@ class FooterWidget extends StatelessWidget {
               bottom: 16,
             ),
           ),
-          Text('Made with 🎯and 💙'),
+          Text(kFooterEnding),
         ],
       ),
     );

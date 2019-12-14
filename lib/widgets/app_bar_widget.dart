@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:joshvocal_dev/config/themes.dart';
 import 'package:joshvocal_dev/providers/theme_notifier.dart';
+import 'package:joshvocal_dev/resources/themes.dart';
 import 'package:provider/provider.dart';
 
 class AppBarWidget extends StatefulWidget implements PreferredSizeWidget {

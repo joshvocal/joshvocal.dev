@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:joshvocal_dev/pages/home_page.dart';
 import 'package:joshvocal_dev/providers/theme_notifier.dart';
+import 'package:joshvocal_dev/resources/themes.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'config/themes.dart';
-import 'pages/home_page.dart';
 
 void main() async {
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
