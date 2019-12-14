@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:joshvocal_dev/config/themes.dart';
-import 'package:joshvocal_dev/providers/theme_notifier.dart';
 import 'package:joshvocal_dev/widgets/app_bar_widget.dart';
 import 'package:joshvocal_dev/widgets/footer_widget.dart';
-import 'package:provider/provider.dart';
+import 'package:joshvocal_dev/widgets/intro_widget.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -15,40 +13,26 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  bool _darkTheme;
-
   @override
   Widget build(BuildContext context) {
-    final themeNotifier = Provider.of<ThemeNotifier>(context);
-    _darkTheme = (themeNotifier.getTheme() == darkTheme);
-
     return Scaffold(
       appBar: AppBarWidget(
-        widget.title,
+        title: widget.title,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Under Construction 👷‍',
-              style: TextStyle(
-                fontSize: 18,
-              ),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.all(16.0),
+          alignment: Alignment.center,
+          child: Container(
+            width: MediaQuery.of(context).size.width * 0.5,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                IntroWidget(),
+                FooterWidget(),
+              ],
             ),
-          ],
-        ),
-      ),
-      bottomNavigationBar: FooterWidget(),
-      floatingActionButton: FloatingActionButton(
-        elevation: 0,
-        onPressed: () {
-          themeNotifier.setTheme(lightTheme);
-          themeNotifier.onThemeChanged(!_darkTheme, themeNotifier);
-        },
-        tooltip: _darkTheme ? 'Light Theme' : 'Dark Theme',
-        child: Icon(
-          _darkTheme ? Icons.wb_sunny : Icons.wb_incandescent,
+          ),
         ),
       ),
     );

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:joshvocal_dev/config/themes.dart';
+import 'package:joshvocal_dev/providers/theme_notifier.dart';
+import 'package:provider/provider.dart';
 
-class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
-  AppBarWidget(
-    this.title,
-  );
+class AppBarWidget extends StatefulWidget implements PreferredSizeWidget {
+  AppBarWidget({@required this.title});
 
   final String title;
 
@@ -11,12 +12,33 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
 
   @override
+  _AppBarWidgetState createState() => _AppBarWidgetState();
+}
+
+class _AppBarWidgetState extends State<AppBarWidget> {
+  bool _darkTheme;
+
+  @override
   Widget build(BuildContext context) {
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+    _darkTheme = (themeNotifier.getTheme() == darkTheme);
+
     return AppBar(
       elevation: 0,
-      titleSpacing: 40,
       backgroundColor: Colors.transparent,
-      title: Text(this.title),
+      title: Text(this.widget.title),
+      actions: <Widget>[
+        IconButton(
+          icon: Icon(
+            _darkTheme ? Icons.wb_sunny : Icons.wb_incandescent,
+          ),
+          tooltip: _darkTheme ? 'Light Theme' : 'Dark Theme',
+          onPressed: () {
+            themeNotifier.setTheme(lightTheme);
+            themeNotifier.onThemeChanged(!_darkTheme, themeNotifier);
+          },
+        ),
+      ],
     );
   }
 }
