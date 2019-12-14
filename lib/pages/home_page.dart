@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:joshvocal_dev/config/themes.dart';
 import 'package:joshvocal_dev/providers/theme_notifier.dart';
-import 'package:joshvocal_dev/widgets/custom_app_bar.dart';
+import 'package:joshvocal_dev/widgets/app_bar_widget.dart';
+import 'package:joshvocal_dev/widgets/footer_widget.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,7 +23,7 @@ class _HomePageState extends State<HomePage> {
     _darkTheme = (themeNotifier.getTheme() == darkTheme);
 
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: AppBarWidget(
         widget.title,
       ),
       body: Center(
@@ -38,7 +39,9 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+      bottomNavigationBar: FooterWidget(),
       floatingActionButton: FloatingActionButton(
+        elevation: 0,
         onPressed: () {
           themeNotifier.setTheme(lightTheme);
           themeNotifier.onThemeChanged(!_darkTheme, themeNotifier);
