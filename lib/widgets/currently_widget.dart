@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CurrentWidget extends StatelessWidget {
   @override
@@ -10,11 +9,13 @@ class CurrentWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.only(bottom: 8),
+            padding: EdgeInsets.only(
+              bottom: 32,
+            ),
             child: Text(
               'Current Interests',
               style: TextStyle(
-                fontSize: 32,
+                fontSize: 28,
                 fontWeight: FontWeight.bold,
               ),
             ),

@@ -4,6 +4,7 @@ import 'package:joshvocal_dev/widgets/currently_widget.dart';
 import 'package:joshvocal_dev/widgets/employment_widget.dart';
 import 'package:joshvocal_dev/widgets/footer_widget.dart';
 import 'package:joshvocal_dev/widgets/intro_widget.dart';
+import 'package:joshvocal_dev/widgets/responsive_widget.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -22,19 +23,46 @@ class _HomePageState extends State<HomePage> {
         title: widget.title,
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 16.0),
           alignment: Alignment.center,
-          child: Container(
-            width: MediaQuery.of(context).size.width * 0.4,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                IntroWidget(),
-                EmploymentWidget(),
-                CurrentWidget(),
-                FooterWidget(),
-              ],
+          child: ResponsiveWidget(
+            largeScreen: Container(
+              width: MediaQuery.of(context).size.width * 0.4,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  IntroWidget(),
+                  EmploymentWidget(),
+                  CurrentWidget(),
+                  FooterWidget(),
+                ],
+              ),
+            ),
+            mediumScreen: Container(
+              width: MediaQuery.of(context).size.width * 0.6,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  IntroWidget(),
+                  EmploymentWidget(),
+                  CurrentWidget(),
+                  FooterWidget(),
+                ],
+              ),
+            ),
+            smallScreen: Container(
+              width: MediaQuery.of(context).size.width,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  IntroWidget(),
+                  EmploymentWidget(),
+                  CurrentWidget(),
+                  FooterWidget(),
+                ],
+              ),
             ),
           ),
         ),
