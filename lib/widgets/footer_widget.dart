@@ -13,9 +13,6 @@ class FooterWidget extends StatelessWidget {
         children: <Widget>[
           Padding(
             padding: EdgeInsets.only(
-              left: 0,
-              right: 0,
-              top: 0,
               bottom: 8,
             ),
             child: Text(
@@ -51,9 +48,6 @@ class FooterWidget extends StatelessWidget {
               ],
             ),
             padding: EdgeInsets.only(
-              left: 0,
-              right: 0,
-              top: 0,
               bottom: 16,
             ),
           ),

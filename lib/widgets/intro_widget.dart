@@ -4,8 +4,9 @@ class IntroWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(bottom: 48),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Padding(
             child: Text(
@@ -14,7 +15,7 @@ class IntroWidget extends StatelessWidget {
                 fontSize: 32,
               ),
             ),
-            padding: EdgeInsets.only(left: 0, right: 0, top: 0, bottom: 32),
+            padding: EdgeInsets.only(bottom: 32),
           ),
           Padding(
             child: Text(
@@ -23,7 +24,7 @@ class IntroWidget extends StatelessWidget {
                 fontSize: 18,
               ),
             ),
-            padding: EdgeInsets.only(left: 0, right: 0, top: 0, bottom: 8),
+            padding: EdgeInsets.only(bottom: 8),
           ),
           Text(
             'Currently an intern at Shopify and previously at SAP.',

@@ -26,7 +26,7 @@ class WebsiteApp extends StatelessWidget {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
 
     return MaterialApp(
-      title: 'Josh Vocal | Software Engineer',
+      title: 'Josh - Software Engineer',
       debugShowCheckedModeBanner: false,
       theme: themeNotifier.getTheme(),
       home: HomePage(title: 'Josh Vocal'),

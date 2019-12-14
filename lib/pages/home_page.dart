@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:joshvocal_dev/widgets/app_bar_widget.dart';
+import 'package:joshvocal_dev/widgets/currently_widget.dart';
 import 'package:joshvocal_dev/widgets/footer_widget.dart';
 import 'package:joshvocal_dev/widgets/intro_widget.dart';
 
@@ -21,14 +22,15 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(16.0),
+          padding: EdgeInsets.symmetric(horizontal: 16.0),
           alignment: Alignment.center,
           child: Container(
-            width: MediaQuery.of(context).size.width * 0.5,
+            width: MediaQuery.of(context).size.width * 0.4,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 IntroWidget(),
+                CurrentWidget(),
                 FooterWidget(),
               ],
             ),
